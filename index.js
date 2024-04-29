@@ -1,9 +1,10 @@
 // Importando os arquivos JSON
-import enData from './en.json';
-import ptData from './pt.json';
+import enData from './messages/en.json' with { type: "json" };
+import ptData from './messages/pt.json' with { type: "json" };
 
 // Função para selecionar o idioma desejado
-export function selecionarIdioma(lang) {
+console.log(enData, 'test')
+function selecionarIdioma(lang) {
     switch (lang) {
         case 'en':
             return enData;
@@ -14,7 +15,7 @@ export function selecionarIdioma(lang) {
     }
 }
 
-export function traduzirArray(arr, lang) {
+function traduzirArray(arr, lang) {
   const languageData = selectLanguage(lang);
   const translatedArray = [];
 
