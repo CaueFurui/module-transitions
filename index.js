@@ -3,7 +3,6 @@ import enData from './messages/en.json' with { type: "json" };
 import ptData from './messages/pt.json' with { type: "json" };
 
 // Função para selecionar o idioma desejado
-console.log(enData, 'test')
 function selecionarIdioma(lang) {
     switch (lang) {
         case 'en':
@@ -32,4 +31,9 @@ function traduzirArray(arr, lang) {
   }
 
   return translatedArray;
+}
+
+export {
+    selecionarIdioma,
+    traduzirArray
 }
