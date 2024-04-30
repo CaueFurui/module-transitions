@@ -20,5 +20,8 @@ function traduzirArray(lang, arr) {
 }
 
 module.exports = {
-    traduzirArray
+    traduzirArray,
+    selecionarIdioma,
+    enData,
+    ptData
 }
