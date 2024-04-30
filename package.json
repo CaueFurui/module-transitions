@@ -2,7 +2,6 @@
   "name": "module-translations",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "repository": "git@github.com:CaueFurui/module-transitions.git",
   "author": "cauefurui <cauefurui@gmail.com>",
   "license": "MIT"

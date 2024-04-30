@@ -1,6 +1,6 @@
 // Importando os arquivos JSON
-import enData from './messages/en.json' with { type: "json" };
-import ptData from './messages/pt.json' with { type: "json" };
+const enData = require('./messages/en.json')
+const ptData = require('./messages/pt.json')
 
 // Função para selecionar o idioma desejado
 function selecionarIdioma(lang) {
@@ -10,27 +10,13 @@ function selecionarIdioma(lang) {
         case 'pt':
             return ptData;
         default:
-            return enData;
+            return ptData;
     }
 }
 
-function traduzirArray(arr, lang) {
-  const languageData = selecionarIdioma(lang);
-  const translatedArray = [];
-
-  for (let i = 0; i < arr.length; i++) {
-      const key = arr[i].key;
-
-      // Verifica se a chave existe nos dados do idioma selecionado
-      if (languageData.hasOwnProperty(key)) {
-          translatedArray.push({ key: key, value: languageData[key] });
-      } else {
-          // Se a chave não for encontrada, mantém o valor original
-          translatedArray.push({ key: key, value: value });
-      }
-  }
-
-  return translatedArray;
+function traduzirArray(lang, arr) {
+    const languageData = selecionarIdioma(lang);
+    return arr.map(key => languageData[key] || "Value not found");
 }
 
 module.exports = {
