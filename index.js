@@ -15,7 +15,7 @@ function selecionarIdioma(lang) {
 }
 
 function traduzirArray(arr, lang) {
-  const languageData = selectLanguage(lang);
+  const languageData = selecionarIdioma(lang);
   const translatedArray = [];
 
   for (let i = 0; i < arr.length; i++) {
@@ -33,7 +33,6 @@ function traduzirArray(arr, lang) {
   return translatedArray;
 }
 
-export {
-    selecionarIdioma,
+module.exports = {
     traduzirArray
 }
