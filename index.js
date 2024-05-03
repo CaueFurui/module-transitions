@@ -14,7 +14,11 @@ function selecionarIdioma(lang) {
     }
 }
 
-function traduzirArray(lang, arr) {
+function traduzirArray(lang, arr, file) {
+    if (file) {
+        return arr.map(key => file[key] || "Value not found");
+    }
+
     const languageData = selecionarIdioma(lang);
     return arr.map(key => languageData[key] || "Value not found");
 }
