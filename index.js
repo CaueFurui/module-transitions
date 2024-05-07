@@ -17,8 +17,6 @@ function traduzirItem(str) {
     return file[str] || "Valor não encontrado";
 }
 
-console.log(file)
-
 module.exports = {
     traduzirLista,
     traduzirItem,
