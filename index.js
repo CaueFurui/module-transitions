@@ -4,7 +4,6 @@ const ptData = require('./messages/pt.json')
 
 var file
 
-// Função para selecionar o idioma desejado
 function selecionarArquivo(newFile) {
    file = newFile
 }
@@ -17,8 +16,7 @@ function traduzirItem(str) {
     return file[str] || "Valor não encontrado";
 }
 
-selecionarArquivo(enData)
-console.log(file, 'file')
+console.log(file)
 
 module.exports = {
     traduzirLista,
