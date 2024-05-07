@@ -2,30 +2,25 @@
 const enData = require('./messages/en.json')
 const ptData = require('./messages/pt.json')
 
+var file
+
 // Função para selecionar o idioma desejado
-function selecionarIdioma(lang) {
-    switch (lang) {
-        case 'en':
-            return enData;
-        case 'pt':
-            return ptData;
-        default:
-            return ptData;
-    }
+function selecionarArquivo(newFile) {
+   file = newFile
 }
 
-function traduzirArray(lang, arr, file) {
-    if (file) {
-        return arr.map(key => file[key] || "Value not found");
-    }
+function traduzirLista(arr) {
+    return arr.map(key => file[key] || "Valor não encontrado");
+}
 
-    const languageData = selecionarIdioma(lang);
-    return arr.map(key => languageData[key] || "Value not found");
+function traduzirItem(str) {
+    return file[str] || "Valor não encontrado";
 }
 
 module.exports = {
     traduzirArray,
-    selecionarIdioma,
+    traduzirItem,
+    selecionarArquivo,
     enData,
     ptData
 }
