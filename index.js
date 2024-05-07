@@ -5,11 +5,11 @@ const ptData = require('./messages/pt.json')
 var file
 
 function selecionarArquivo(newFile) {
-   console.log('newFile', newFile)
    file = newFile
 }
 
 function traduzirLista(arr) {
+    console.log(file, 'test')
     return arr.map(key => file[key] || "Valor não encontrado");
 }
 
