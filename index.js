@@ -17,10 +17,12 @@ function traduzirItem(str) {
     return file[str] || "Valor não encontrado";
 }
 
+selecionarArquivo(enData)
+console.log(file, 'file')
+
 module.exports = {
-    traduzirArray,
+    traduzirLista,
     traduzirItem,
     selecionarArquivo,
-    enData,
-    ptData
+    file
 }
