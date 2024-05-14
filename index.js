@@ -1,15 +1,10 @@
-// Importando os arquivos JSON
-const enData = require('./messages/en.json')
-const ptData = require('./messages/pt.json')
-
-var file
+let file = null
 
 function selecionarArquivo(newFile) {
    file = newFile
 }
 
 function traduzirLista(arr) {
-    console.log(file, 'test')
     return arr.map(key => file[key] || "Valor não encontrado");
 }
 
